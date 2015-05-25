@@ -10,6 +10,28 @@ import UIKit
 
 class AddToDoItemViewController: UIViewController {
     
+    @IBOutlet weak var toDoTextField: UITextField!
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    var toDoItem: ToDoItem?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if sender as? UIBarButtonItem != self.saveButton || toDoTextField.text.isEmpty{
+            return
+        }
+        
+        self.toDoItem = ToDoItem(itemName: toDoTextField.text)
+    }
+    
 }
 
 
