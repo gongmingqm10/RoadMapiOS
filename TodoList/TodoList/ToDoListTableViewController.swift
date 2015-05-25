@@ -10,12 +10,13 @@ import UIKit
 
 class ToDoListTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var toDoItems: [ToDoItem]! = [ToDoItem]()
-    
-    @IBOutlet weak var todoTableView: UITableView!
+    var toDoItems: [ToDoItem]!
+
+    @IBOutlet weak var toDoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        toDoItems = [ToDoItem]()
         loadInitialData()
     }
     
@@ -47,7 +48,19 @@ class ToDoListTableViewController: UITableViewController, UITableViewDataSource,
         let item = toDoItems[indexPath.row]
         cell.textLabel!.text = item.itemName
         
+        if item.completed {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var toDoItem = toDoItems[indexPath.row]
+        toDoItem.completed = !toDoItem.completed
+        toDoTableView.reloadData()
     }
     
     

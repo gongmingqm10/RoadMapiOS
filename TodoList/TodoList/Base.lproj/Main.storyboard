@@ -87,7 +87,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="gyk-PX-cMg" id="v00-OR-PhQ"/>
+                        <outlet property="toDoTableView" destination="gyk-PX-cMg" id="KVN-s1-Js5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzY-oH-rHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
