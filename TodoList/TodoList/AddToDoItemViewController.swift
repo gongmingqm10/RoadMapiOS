@@ -29,7 +29,7 @@ class AddToDoItemViewController: UIViewController {
             return
         }
         
-        self.toDoItem = ToDoItem(itemName: toDoTextField.text)
+        self.toDoItem = ToDoItem(json: ["itemName": toDoTextField.text, "completed": 0])
     }
     
 }

@@ -16,28 +16,18 @@ class ToDoListTableViewController: UITableViewController, UITableViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        toDoItems = [ToDoItem]()
-        loadInitialData()
+        toDoItems = DatabaseAccessor.sharedInstance.getTodoItems()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func loadInitialData() {
-        
-        toDoItems.append(ToDoItem(itemName: "This is item 1"))
-        toDoItems.append(ToDoItem(itemName: "This is item 2"))
-        toDoItems.append(ToDoItem(itemName: "This is item 3"))
-        toDoItems.append(ToDoItem(itemName: "This is item 4"))
-        toDoItems.append(ToDoItem(itemName: "This is item 5"))
-        toDoItems.append(ToDoItem(itemName: "This is item 6"))
-    }
-    
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         var item = (segue.sourceViewController as! AddToDoItemViewController).toDoItem
         if let toDoItem = item {
             toDoItems.append(toDoItem)
+            DatabaseAccessor.sharedInstance.updateTodoItem(toDoItem)
             toDoTableView.reloadData()
         }
     }
@@ -52,7 +42,7 @@ class ToDoListTableViewController: UITableViewController, UITableViewDataSource,
         let item = toDoItems[indexPath.row]
         cell.textLabel!.text = item.itemName
         
-        if item.completed {
+        if item.completed != nil && item.completed == true {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         } else {
             cell.accessoryType = UITableViewCellAccessoryType.None
@@ -64,6 +54,7 @@ class ToDoListTableViewController: UITableViewController, UITableViewDataSource,
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var toDoItem = toDoItems[indexPath.row]
         toDoItem.completed = !toDoItem.completed
+        DatabaseAccessor.sharedInstance.updateTodoItem(toDoItem)
         toDoTableView.reloadData()
     }
     

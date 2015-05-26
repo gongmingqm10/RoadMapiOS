@@ -6,15 +6,30 @@
 //  Copyright (c) 2015 gongmingqm10. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class ToDoItem: NSObject {
-    var itemName : String
-    var completed : Bool = false
-    private(set) var creationDate : NSDate
+    var itemName: String!
+    var completed: Bool!
+    var creationDate: NSDate!
     
-    init(itemName:String) {
-        self.itemName = itemName
-        creationDate = NSDate()
+    init(json: NSDictionary) {
+        self.itemName = json["itemName"] as! String
+        self.completed = json["completed"] as! Int == 1
+
+        if let jsonDate = json["creationDate"] as? String {
+            self.creationDate = ToDoItem.dateFormmater.dateFromString(jsonDate)
+        } else {
+            creationDate = NSDate()
+        }
+        
+        super.init()
     }
+    
+    class var dateFormmater: NSDateFormatter {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:MM:SS"
+        return formatter
+    }
+    
 }
