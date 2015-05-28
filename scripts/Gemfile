@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+
+gem 'spreadsheet', '~> 1.0.3'
+gem 'rubysl-rexml', '~> 2.0.4'
+gem 'pry', '~> 0.10.1'

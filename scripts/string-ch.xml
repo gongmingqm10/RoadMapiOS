@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+  <string name='nav_login_info'><![CDATA[<i><b>登录或注册</b> 管理你的旅程.</i>]]></string>
+  <string name='app_name'>中国国际航空</string>
+  <string name='action_settings'>设置</string>
+  <string name='title_activity_flight_status'>航班状态</string>
+  <string name='default_label_flight_number'>航班号</string>
+  <string name='button_get_flight_status'>搜索</string>
+  <string name='default_date_string'>日期</string>
+
+  <string-array name='departure_cities'>
+    <item>达拉斯</item>
+    <item>休斯顿</item>
+  </string-array>
+
+  <plurals name='flight_detail_subtitle'>
+    <item quantity='one'>航班 %1$s</item>
+    <item quantity='other'>航班 %1$s/%2$s</item>
+  </plurals>
+
+</resources>
