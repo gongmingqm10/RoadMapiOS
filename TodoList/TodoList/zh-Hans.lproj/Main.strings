@@ -2,20 +2,20 @@
 /* Class = "UINavigationItem"; title = "Add To-Do Item"; ObjectID = "FLJ-ry-kxC"; */
 "FLJ-ry-kxC.title" = "添加备忘录";
 
-/* Class = "UITextField"; placeholder = "New to-do item"; ObjectID = "Mfc-Rw-wBT"; */
+/* Class = "UITextField"; placeholder = "新建备忘"; ObjectID = "Mfc-Rw-wBT"; */
 "Mfc-Rw-wBT.placeholder" = "新建备忘";
 
-/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "g2E-wT-Ghw"; */
+/* Class = "UIBarButtonItem"; title = "保存"; ObjectID = "g2E-wT-Ghw"; */
 "g2E-wT-Ghw.title" = "保存";
 
 /* Class = "UINavigationItem"; title = "To-Do List"; ObjectID = "gJn-hl-HHw"; */
 "gJn-hl-HHw.title" = "备忘录";
 
 /* Class = "UILabel"; text = "Mow the lawn"; ObjectID = "jGT-ST-pWG"; */
-"jGT-ST-pWG.text" = "默认内容";
+"jGT-ST-pWG.text" = "割谷子";
 
 /* Class = "UIBarButtonItem"; title = "+"; ObjectID = "kpP-q8-j0f"; */
 "kpP-q8-j0f.title" = "+";
 
-/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "vUq-aV-kvy"; */
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "vUq-aV-kvy"; */
 "vUq-aV-kvy.title" = "取消";
